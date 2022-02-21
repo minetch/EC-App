@@ -6,6 +6,7 @@ const Login = () => {
     return(
         <>
             <button onClick={ () => dispatch(push('/'))}>トップへ</button>
+            <div>hello this is from aiba</div>
         </>
     );
 }
