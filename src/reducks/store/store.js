@@ -4,7 +4,6 @@ import {
     applyMiddleware
 } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
-//import { ProductsReducer } from '../products/reducers';
 import { UsersReducer } from '../user/reducers';
 
 export default function createStore(history) {
