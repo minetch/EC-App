@@ -1,8 +1,7 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
 import { getUserId } from '../reducks/user/seletors'
-import { useSelector } from 'react-redux';
 
 const Top = () => {
     const dispatch = useDispatch();
@@ -15,6 +14,7 @@ const Top = () => {
                 <div className="Top">
                     <h1 className="Top-Title">ShopRint</h1>
                     <button className="" onClick={() => dispatch(push('/login'))}>ログイン</button>
+                    <button className="" onClick={ () => dispatch(push('/ItemList'))}>商品を見る</button>
                     <p>{uid}</p>
                 </div>
             </div>
