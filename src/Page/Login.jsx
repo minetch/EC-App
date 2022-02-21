@@ -1,4 +1,4 @@
-const ItemView = () => {
+const Login = () => {
     return(
         <>
         
@@ -6,4 +6,4 @@ const ItemView = () => {
     );
 }
 
-export default ItemView;
+export default Login;
