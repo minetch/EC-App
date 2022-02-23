@@ -1,31 +1,51 @@
-import { makeStyles } from '@mui/material';
-import React from 'react'
+import { makeStyles } from '@mui/styles';
+import { push } from 'connected-react-router';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import '../reset.css'
 
 const useStyles = makeStyles({
-    container:{
-        height: 200,
-        width:70,
+    frame:{
+        height:360,
+        width:"20%",
+        borderRadius:3,
+        border:"2px solid",
+        margin:2.5,
+        '&:hover': {
+            backgroundColor: "#B2B2B2",
+        }
     },image:{
-        height:50,
-        width:50,
+        maxHeight:"90%",
+        maxWidth:"90%",
+        margin:"5%"
+    },name:{
+        fontWeight:"bold",
+        margin:"10px 5px 10px 5px", 
+        float:"left",
     },maker:{
         fontSize:11,
+        float:"left",
+        textAlign:"center"
     },price:{
-        fontSize:9
-    },hover:{
-        backgroundColor:"#81c784"
+        fontSize:17,
+        float:"right",
+        margin:"10px 5px 10px 5px"
     }
-
 })
 
 const ItemBox = (props) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+
     return(
         <>
-            <div className={classes.container}>
-                <img src={props.Image} alt="" className={classes.Image} />
-                <p className="">{props.Price}</p>
-                <p className="">{props.Maker}</p>
+            <div className={classes.frame} 
+                onClick={(props) => dispatch(push(props.ID))}
+            >
+                <img src={props.Image} alt="" className={classes.image} />
+                <p className={classes.name}>{props.Name}</p>
+                <p className={classes.price}>{props.Price}</p>
+                <p className={classes.maker}>{props.Maker}</p>
             </div>
         </>
     );
