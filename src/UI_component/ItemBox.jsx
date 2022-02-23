@@ -26,7 +26,8 @@ const useStyles = makeStyles({
     },price:{
         fontSize:17,
         float:"right",
-        margin:"10px 5px 10px 5px"
+        margin:"10px 5px 10px 5px",
+        fontFamily:"Impact",
     }
 })
 

@@ -6,15 +6,20 @@ import { push } from 'connected-react-router';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/Input';
 import Data from './GcodeFiles/cup.gcode';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+  
+})
 const ItemView = () => {
-    getCsvData(Data);	
-    return(
-        <>
-            <div>
-                <Button variant="contained" onClick={PrinterSetting}>購入</Button>                
-            </div>
-        </>
-    );
+  getCsvData(Data);	
+  return(
+    <>
+      <div>
+        <Button variant="contained" onClick={PrinterSetting}>購入</Button>                
+      </div>
+    </>
+  );
 }
 
 export default ItemView;
