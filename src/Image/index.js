@@ -1,0 +1,7 @@
+export {default as Case} from './case.png'
+export {default as coffee_cup} from './coffe_cup.png'
+export {default as cube} from './cube.png'
+export {default as hunger} from './hunger.png'
+export {default as piece_of_cake} from './piece_of_cake.png'
+export {default as S} from './S.png'
+export {default as toothbrush} from './toothbrush.png'
