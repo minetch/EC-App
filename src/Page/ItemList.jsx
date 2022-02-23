@@ -1,11 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import React from 'react'
 import { ItemBox } from '../UI_component';
-<<<<<<< HEAD
-import {coffee_cup, Case} from '../Image';
-=======
 import { coffee_cup, Case, cube, hunger, piece_of_cake, S, toothbrush} from '../Image'
->>>>>>> upstream/master
 import '../reset.css'
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
