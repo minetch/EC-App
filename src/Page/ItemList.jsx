@@ -75,6 +75,28 @@ const ItemList = () => {
                     Maker={"Aiba Hizuki"}
                     onClick={() => dispatch(push('/ItemView/toothbrush'))}
                 />
+                                <ItemBox 
+                    Image={coffee_cup}
+                    Name={"Cup"}
+                    Price={"¥100"}
+                    Maker={"Aiba Hizuki"}
+                    onClick={() => dispatch(push('/ItemView/coffee_cup'))}
+                />
+                <ItemBox 
+                    Image={Case}
+                    Name={"謎のケース"}
+                    Price={"¥100"}
+                    Maker={"Aiba Hizuki"}
+                    onClick={() => dispatch(push('/ItemView/Case'))}
+                />
+                <ItemBox 
+                    Image={cube}
+                    Name={"立方体"}
+                    Price={"¥100"}
+                    Maker={"Aiba Hizuki"}
+                    onClick={() => dispatch(push('/ItemView/cube'))}
+                />  
+
             </div>
         </>   
     );
