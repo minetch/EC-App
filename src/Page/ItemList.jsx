@@ -1,7 +1,7 @@
 import { makeStyles } from '@mui/styles';
 import React from 'react'
 import { ItemBox } from '../UI_component';
-import {coffee_cup, Case} from '../Image'
+import {coffee_cup, Case} from '../Image';
 import '../reset.css'
 
 const useStyles = makeStyles({
