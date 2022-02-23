@@ -1,7 +1,4 @@
 import { makeStyles } from '@mui/styles';
-import { push } from 'connected-react-router';
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
 import '../reset.css'
 
 const useStyles = makeStyles({
@@ -35,12 +32,12 @@ const useStyles = makeStyles({
 
 const ItemBox = (props) => {
     const classes = useStyles();
-    const dispatch = useDispatch();
 
     return(
         <>
-            <div className={classes.frame} 
-                onClick={(props) => dispatch(push(props.ID))}
+            <div 
+                className={classes.frame}
+                onClick={props.onClick}    
             >
                 <img src={props.Image} alt="" className={classes.image} />
                 <p className={classes.name}>{props.Name}</p>
