@@ -21,6 +21,8 @@ export default ItemView;
 
 
 
+
+
 function getCsvData( dataPath )
 {
 	var req = new XMLHttpRequest();

@@ -9,7 +9,6 @@ const Top = () => {
         <>
             <div className="Top-Container">
                 <div className="Top">
-                    <h1 className="Top-Title">ShopRint</h1>
                     <Button 
                         className="" 
                         onClick={() => dispatch(push('/login'))}
