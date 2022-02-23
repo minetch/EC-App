@@ -5,38 +5,13 @@ import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/Input';
-
+import Data from './GcodeFiles/cup.gcode';
 const ItemView = () => {
-    useEffect(() => {
-        // イベントリスナーを登録
-        var obj1 = document.getElementById("gcode_file");
-        obj1.addEventListener("change",function(evt){
-  
-          var file = evt.target.files;
-  
-          //FileReaderの作成
-          var reader = new FileReader();
-          //テキスト形式で読み込む
-          reader.readAsText(file[0]);
-          
-          //読込終了後の処理
-          reader.onload = function(ev){
-            //テキストエリアに表示する
-          SaveasGcode(reader.result);
-          }
-        },false);
-      }, []);
-
+    getCsvData(Data);	
     return(
         <>
             <div>
                 <Button variant="contained" onClick={PrinterSetting}>購入</Button>                
-                <Paper elevation="6"  className="controll-paper">
-                <text>Gcodeファイル</text>
-                <TextField type = "file" id="gcode_file" label="Standard" variant="standard" />
-                <Button  onClick={SendGcode_fromFile} variant="contained">開始</Button>
-
-              </Paper>
             </div>
         </>
     );
@@ -44,6 +19,18 @@ const ItemView = () => {
 
 export default ItemView;
 
+
+
+function getCsvData( dataPath )
+{
+	var req = new XMLHttpRequest();
+    req.open("get", dataPath, true);	// アクセスするファイルを指定
+	req.send(null);			// HTTP リクエストの発行（引数は省略できる模様）
+    req.onload = function(){
+		console.log(req.responseText);	
+        SaveasGcode(req.responseText);	
+	}
+}
 
 
 
@@ -56,12 +43,14 @@ async function PrinterSetting() {
           port = await navigator.serial.requestPort();
           await port.open({ baudRate: 115200 });
           console.log("接続");
-          onConnectButtonClick()
+         onConnectButtonClick()
+         SendGcode_fromFile()
       } catch (e) {
           console.log("Error");
       }
   }
 
+  
 
 let SerialBuffer;
 async function onConnectButtonClick() {
@@ -79,7 +68,6 @@ async function onConnectButtonClick() {
                         addSerial("Canceled\n");
                         break;
                     }
-                    console.log(DecodedValue)
                     inputValue = inputValue + DecodedValue
                     if(inputValue.includes("\n")){
                       break;
@@ -108,7 +96,6 @@ async function onConnectButtonClick() {
 }
 
 function addSerial(text){
-  let monitor = document.getElementById('monitor');
   console.log(text)
 }
 
