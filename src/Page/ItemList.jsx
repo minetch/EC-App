@@ -5,8 +5,8 @@ const ItemList = () => {
     return(
         <>
             <ItemBox
-                Price={"1￥"}
-
+                Price={"¥100"}
+                Maker={"Aiba Hizuki"}
             />
         </>   
     );

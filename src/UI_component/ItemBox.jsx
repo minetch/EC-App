@@ -6,8 +6,8 @@ const useStyles = makeStyles({
         height: 200,
         width:70,
     },image:{
-        height:100,
-        width:30,
+        height:50,
+        width:50,
     },maker:{
         fontSize:11,
     },price:{
