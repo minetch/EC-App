@@ -17,8 +17,8 @@ const Styles = makeStyles({
 })
 
 const TextArea = (props) => {
-    const style = Styles();
-    const textStyle = props.fullWidth ? style.full : style.half;
+    const classes = Styles();
+    const textStyle = props.fullWidth ? classes.full : classes.half;
     return(
         <TextField
             margin='dense'
