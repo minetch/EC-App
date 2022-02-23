@@ -4,12 +4,11 @@ import { ItemBox } from '../UI_component';
 const ItemList = () => {
     return(
         <>
-            <ItemBox 
+            <ItemBox
                 Price={"1￥"}
 
             />
-            
-        </>
+        </>   
     );
 }
 
