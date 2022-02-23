@@ -1,39 +1,22 @@
 import React, { useCallback, useState }from 'react'
 import { TextArea } from '../UI_component';
 import { Button } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router';
+import { makeStyles } from '@mui/styles';
 
-const Modal = () => {
-    const dispatch = useDispatch();
-    if(true){
-        return(
-            <>
-                <div>
-                    <div>
-                        <p>商品を追加しました</p>
-                        <Button
-                            variant="contained"
-                            onClick={() => dispatch(push('/'))}
-                        >トップへ戻る</Button>
-                    </div>
-                </div>
-            </>
-        );
-    }else{
-        return null;
+
+const useStyles = makeStyles({
+    input:{
+        padding:"0px 100px"
     }
+})
 
-}
+
 
 const AddProducts = () => {
+    const classes = useStyles();
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
-    const [showModal, setShowModal] = useState(false);
     
-    const openModal = () => {
-        setShowModal(true)
-    }
 
     const Name = useCallback((event) => {
         setName(event.target.value)
@@ -46,7 +29,7 @@ const AddProducts = () => {
     return(
         <>
             <h2 className="">商品の登録</h2>
-            <div className="">
+            <div className={classes.input}>
                 <TextArea 
                     label={"商品名"}
                     multiline={false}
@@ -69,9 +52,7 @@ const AddProducts = () => {
                 />
                 <Button 
                     variant="contained"
-                    onClick={openModal}
-                >確定</Button>
-                <Modal modal={showModal}/>
+                >確定</Button>    
             </div>
         </>
     )
