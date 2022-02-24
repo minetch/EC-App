@@ -1,15 +1,11 @@
 import { makeStyles } from '@mui/styles';
 import '../reset.css'
+import Paper from '@mui/material/Paper';
 
 const useStyles = makeStyles({
     frame:{
-        maxHeight:"40%",
-        minHeight:"40%",
-        maxWidth:"20%",
-        minWidth:"20%",
-        borderRadius:3,
-        border:"2px solid",
-        margin:"0.1%",
+        width:"19%",
+        margin:"0.5%",
         '&:hover': {
             backgroundColor: "#B2B2B2",
         }
@@ -17,21 +13,20 @@ const useStyles = makeStyles({
         maxHeight:"90%",
         maxWidth:"90%",
         margin:"5%"
-    },container:{
-        display:"flex"
+    },NameandPriceContainer:{
+        display: 'flex',
+        width:'100%'
     },name:{
+        fontSize:20,
         fontWeight:"bold",
         margin:"10px 5px 10px 5px", 
-        float:"left",
     },maker:{
-        fontSize:11,
-        float:"left",
-        textAlign:"center",
-        margin:"10px 5px"
+        fontSize:18,
+        textAlign:"center"
     },price:{
-        fontSize:17,
+        fontSize:20,
         float:"right",
-        margin:"10px 5px 10px 5px",
+        margin:"auto 5px auto auto",
         fontFamily:"Impact",
     }
 })
@@ -41,17 +36,20 @@ const ItemBox = (props) => {
 
     return(
         <>
-            <div 
+            <Paper
+                elevation={10}
                 className={classes.frame}
                 onClick={props.onClick}    
             >
-                <img src={props.Image} alt="media" className={classes.image} />
-                    <div className={classes.container}>
-                        <p className={classes.name}>{props.Name}</p>
-                        <p className={classes.price}>{props.Price}</p>
-                        <p className={classes.maker}>{props.Maker}</p>
-                    </div>
-            </div>
+                <img src={props.Image} alt="" className={classes.image} />
+                
+                <div className={classes.NameandPriceContainer}>
+                    <p className={classes.name}>{props.Name}</p>
+                    <p className={classes.price}>{props.Price}</p>
+                </div>
+                
+                <p> design by</p><p className={classes.maker}>{props.Maker}</p>
+            </Paper>
         </>
     );
 }
