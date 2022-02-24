@@ -1,13 +1,12 @@
 import { makeStyles } from '@mui/styles';
 import '../reset.css'
+import Paper from '@mui/material/Paper';
+import { width } from '@mui/system';
 
 const useStyles = makeStyles({
     frame:{
-        height:360,
         width:"20%",
-        borderRadius:3,
-        border:"2px solid",
-        margin:2.5,
+        margin:5,
         '&:hover': {
             backgroundColor: "#B2B2B2",
         }
@@ -15,18 +14,20 @@ const useStyles = makeStyles({
         maxHeight:"90%",
         maxWidth:"90%",
         margin:"5%"
+    },NameandPriceContainer:{
+        display: 'flex',
+        width:'100%'
     },name:{
+        fontSize:20,
         fontWeight:"bold",
         margin:"10px 5px 10px 5px", 
-        float:"left",
     },maker:{
-        fontSize:11,
-        float:"left",
+        fontSize:18,
         textAlign:"center"
     },price:{
-        fontSize:17,
+        fontSize:20,
         float:"right",
-        margin:"10px 5px 10px 5px",
+        margin:"auto 5px auto auto",
         fontFamily:"Impact",
     }
 })
@@ -36,15 +37,20 @@ const ItemBox = (props) => {
 
     return(
         <>
-            <div 
+            <Paper
+                elevation={10}
                 className={classes.frame}
                 onClick={props.onClick}    
             >
                 <img src={props.Image} alt="" className={classes.image} />
-                <p className={classes.name}>{props.Name}</p>
-                <p className={classes.price}>{props.Price}</p>
-                <p className={classes.maker}>{props.Maker}</p>
-            </div>
+                
+                <div className={classes.NameandPriceContainer}>
+                    <p className={classes.name}>{props.Name}</p>
+                    <p className={classes.price}>{props.Price}</p>
+                </div>
+                
+                <p> design by</p><p className={classes.maker}>{props.Maker}</p>
+            </Paper>
         </>
     );
 }
