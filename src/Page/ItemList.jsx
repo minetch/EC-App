@@ -13,9 +13,11 @@ img.src = src
 
 const useStyles = makeStyles({
     group:{
+        height:"95%",
+        width:"95%",
         display: "flex",
-        margin:"20px 20px",
-        flexDirection:"wrap",
+        margin:"2% 2.5%",
+        flexWrap:"wrap",
     }
 })
 
@@ -74,7 +76,7 @@ const ItemList = () => {
                     Maker={"Aiba Hizuki"}
                     onClick={() => dispatch(push('/ItemView/toothbrush'))}
                 />
-                                <ItemBox 
+                <ItemBox 
                     Image={coffee_cup}
                     Name={"Cup"}
                     Price={"¥100"}
