@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         margin:"5%"
     },NameandPriceContainer:{
         display: 'flex',
-        width:'100%'
+        width:'100%',
     },name:{
         fontSize:20,
         fontWeight:"bold",
@@ -28,6 +28,10 @@ const useStyles = makeStyles({
         float:"right",
         margin:"auto 5px auto auto",
         fontFamily:"Impact",
+    },designedby:{
+        fontSize:13,
+        margin:"0px 0px 0px 10px",
+        fontFamily:"Comic Sans MS"
     }
 })
 
@@ -48,7 +52,7 @@ const ItemBox = (props) => {
                     <p className={classes.price}>{props.Price}</p>
                 </div>
                 
-                <p> design by</p><p className={classes.maker}>{props.Maker}</p>
+                <p className={classes.designedby}> design by</p><p className={classes.maker}>{props.Maker}</p>
             </Paper>
         </>
     );
