@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     group:{
         display: "flex",
         margin:"20px 20px",
+        flexDirection:"wrap",
     }
 })
 
@@ -59,8 +60,6 @@ const ItemList = () => {
                     Maker={"Aiba Hizuki"}
                     onClick={() => dispatch(push('/ItemView/piece_of_cake'))}
                 />
-            </div>
-            <div className={classes.group}>
                 <ItemBox 
                     Image={S}
                     Name={"S字フック"}
